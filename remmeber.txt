@@ -1,0 +1,13 @@
+# using pip
+python -m pip install -U torch
+python -m pip install -U gpytorch
+python -m pip install -U skorch
+python -m pip install -U scikit-activeml
+python -m pip install -U scikit-learn
+python -m pip install torchensemble
+python -m pip install modAL
+python -m pip install lightning
+
+
+
+

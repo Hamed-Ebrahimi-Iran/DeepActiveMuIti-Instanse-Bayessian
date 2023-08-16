@@ -1,0 +1,23 @@
+transforms = torch.nn.Sequential(
+    transforms.CenterCrop(10),
+    transforms.Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225)),
+)
+################################
+scripted_transforms = torch.jit.script(transforms)
+
+############################################
+opt1 = torch.optim.Adam(params=net[0].parameters(), lr=0.1)
+opt2 = torch.optim.Adam(params=[*net[1].parameters(), *net[2].parameters()], lr=0.001)
+
+############################
+optimizer1 = tf.train.AdamOptimizer().minimize(loss1)
+optimizer2 = tf.train.AdamOptimizer().minimize(loss2)
+# in training:
+_, l1 = sess.run(fetches=[optimizer1, loss1], feed_dict={x: batch_x, y: batch_y})
+_, l2 = sess.run(fetches=[optimizer2, loss2], feed_dict={x: batch_x, y: batch_y})
+
+##############################
+optimizer1 = tf.train.AdamOptimizer().minimize(loss1)
+optimizer2 = tf.train.AdamOptimizer().minimize(loss2)
+# in training:
+_, _, l1, l2 = sess.run(fetches=[optimizer1, optimizer2, loss1, loss2], feed_dict={x: batch_x, y: batch_y})
