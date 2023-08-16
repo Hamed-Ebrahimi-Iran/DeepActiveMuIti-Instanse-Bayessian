@@ -1,12 +1,19 @@
 # using pip
-python -m pip install -U torch
-python -m pip install -U gpytorch
-python -m pip install -U skorch
-python -m pip install -U scikit-activeml
-python -m pip install -U scikit-learn
-python -m pip install torchensemble
-python -m pip install modAL
-python -m pip install lightning
+!python -m pip install -U torch
+!python -m pip install -U gpytorch
+!python -m pip install -U skorch
+!python -m pip install -U scikit-activeml
+!python -m pip install -U scikit-learn
+!python -m pip install torchensemble
+!python -m pip install modAL
+!python -m pip install lightning
+!python -m pip install pyro-ppl
+!python -m pip install seaborn
+!python -m pip install scipy
+!python -m pip install visdom
+!python -m pip install -U gpytorch
+!python -m pip install --upgrade git+https://github.com/cornellius-gp/linear_operator.git
+!python -m pip install --upgrade git+https://github.com/cornellius-gp/gpytorch.git
 
 
 
